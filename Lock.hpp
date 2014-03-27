@@ -164,7 +164,7 @@ public:
 	_IRQL_requires_max_(APC_LEVEL)
 	void Unlock()
 	{
-		//FltReleasePushLock(m_tLock);
+		FltReleasePushLock(m_tLock);
 	}
 };
 
@@ -187,7 +187,7 @@ public:
 	_IRQL_requires_max_(APC_LEVEL)
 	void Lock()
 	{
-		//FltAcquirePushLockExclusive(m_tLock);
+		FltAcquirePushLockExclusive(m_tLock);
 	}
 };
 
@@ -210,7 +210,7 @@ public:
 	_IRQL_requires_max_(APC_LEVEL)
 	void Lock()
 	{
-		//FltAcquirePushLockShared(m_tLock);
+		FltAcquirePushLockShared(m_tLock);
 	}
 };
 
