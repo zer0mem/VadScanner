@@ -46,24 +46,7 @@ public:
 
 	CVadNode* operator++()
 	{
-		CDummyVad dummy_vad;
-
-		CVADScanLock lock;
-		if (lock.IsLocked())
-		{
-			dummy_vad.RelinkToVadRoot(*m_vad);
-
-			VadTree::iterator it = dummy_vad->begin();
-			++it;
-			
-			CMMVadShort& vad = *it;
-
-			Unlock();
-			m_tLock = &vad->PushLock();
-			Lock();
-
-			m_vad = &vad;
-		}
+		//implement with locking
 		return this;
 	}
 
